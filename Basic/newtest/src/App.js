@@ -7,10 +7,12 @@ import FunctionClick from './components/functionClick'
 import ClassClick from './components/ClassClick'
 import EventBinding from './components/eventBinding'
 import LoggedIn from './components/loggedIn'
+import Forms from './components/forms'
+import GetPosts from './components/listposts'
 function App() {
   return (
     <div>
-      <LoggedIn></LoggedIn>
+      <GetPosts/>
     </div>
   );
 }
