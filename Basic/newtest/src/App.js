@@ -1,19 +1,23 @@
 import React from 'react';
-import Greet from './components/greet'
-import Welcome from './components/welcome'
-import Message from './components/message'
-import Counter from './components/counter'
-import FunctionClick from './components/functionClick'
-import ClassClick from './components/ClassClick'
-import EventBinding from './components/eventBinding'
-import LoggedIn from './components/loggedIn'
-import Forms from './components/forms'
-import GetPosts from './components/listposts'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Nav from './components/nav'
+import About from './components/About'
+import Shop from './components/Shop'
+import Post from './components/PostData'
+
 function App() {
   return (
-    <div>
-      <GetPosts/>
-    </div>
+    <Router>
+      <div>
+        <Nav/>
+        <Switch>
+          <Route path='/about' component={About}/>
+          <Route path='/shop'  component={Shop}/>
+        </Switch>
+      </div>
+      <Post/>
+    </Router>
+    
   );
 }
 

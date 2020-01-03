@@ -14,7 +14,9 @@ class GetRequest extends Component {
     componentDidMount(){
         axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(response => {
-            console.log(response)
+            this.setState({
+                postData:response.data
+            })
         })
         .catch(error=>{
             console.log(error)
@@ -22,8 +24,16 @@ class GetRequest extends Component {
     }
 
     render() {
+        const {postData} = this.state
         return (
-            <div>LIST OF PORTS</div>
+            <div>
+                <h2>LIST OF PORTS</h2>
+                {
+                    postData.length ?
+                    postData.map(postData => <div key={postData.id}> {postData.title} </div> ):
+                    null
+                }
+            </div>
         )
     }
 }
